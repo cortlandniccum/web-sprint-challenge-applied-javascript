@@ -13,6 +13,33 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+
+  const divTopics = document.createElement("div");
+  const divTab1 = document.createElement("div");
+  const divTab2 = document.createElement("div");
+  const divTab3 = document.createElement("div");
+  
+  divTopics.classList.add("topics");
+  divTab1.classList.add("tab");
+  divTab2.classList.add("tab");
+  divTab3.classList.add("tab");
+
+  divTopics.appendChild(divTab1);
+  divTopics.appendChild(divTab2);
+  divTopics.appendChild(divTab3);
+
+  divTab1.textContent = topics;
+  divTab2.textContent = topics;
+  divTab3.textContent = topics;
+
+  topics.forEach((topic) => {
+    const topicList = document.createElement("div");
+    topicList.classList.add("tab");
+    topicList.textContent = topic;
+    divTopics.appendChild(topicList);
+  });
+ 
+  return divTopics;
 }
 
 const tabsAppender = (selector) => {
